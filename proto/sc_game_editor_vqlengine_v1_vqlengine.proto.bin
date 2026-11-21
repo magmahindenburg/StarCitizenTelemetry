@@ -1,134 +1,0 @@
-
-+sc/game/editor/vqlengine/v1/vqlengine.protosc.game.editor.vqlengine.v1"=
-VQLQueryRequest
-vql (	
-limit (
-offset ("‚
-VQLQueryResponse1
-rows (2#.sc.game.editor.vqlengine.v1.VQLRow
-domain (	
-total_count (
-translated_sql (	"x
-VQLRow?
-fields (2/.sc.game.editor.vqlengine.v1.VQLRow.FieldsEntry-
-FieldsEntry
-key (	
-value (	:8"%
-GetTagNameRequest
-tag_guid (	"N
-GetTagNameResponse
-tag_name (	
-parent_guid (	
-	full_path (	"
-GetStatusRequest"j
-StatusResponse
-ready (
-	tag_count (
-last_updated (	
-domains (	
-db_path (	"p
-FindLocationsRequest9
-terms (2*.sc.game.editor.vqlengine.v1.TagSearchTerm
-limit (
-offset ("G
-TagSearchTerm
-positive_tag_guids (	
-negative_tag_guids (	"l
-FindLocationsResponse>
-	locations (2+.sc.game.editor.vqlengine.v1.LocationResult
-total_count ("r
-LocationResult
-location_def_guid (	
-oc_asset_key (	
-display_name (	
-matched_tag_guids (	" 
-GetRecordRequest
-guid (	"…
-GetRecordResponse
-guid (	
-record_type (	
-	file_path (	:
-fields (2*.sc.game.editor.vqlengine.v1.ResolvedField"Y
-ResolvedField
-
-field_path (	
-value (	
-
-value_type (	
-	inherited ("/
-ValidateRequest
-domain (	
-rule (	"m
-ValidateResponseD
-
-violations (20.sc.game.editor.vqlengine.v1.ValidationViolation
-total_count ("s
-ValidationViolation
-source_file (	
-
-element_id (	
-rule (	
-severity (	
-description (	"+
-BrowseTagPathRequest
-path_prefix (	"‚
-BrowseTagPathResponse
-resolved_guid (	
-resolved_path (	;
-children (2).sc.game.editor.vqlengine.v1.TagPathEntry"R
-TagPathEntry
-name (	
-	full_path (	
-guid (	
-child_count ("8
-CompleteVQLRequest
-vql (	
-cursor_offset ("ƒ
-CompleteVQLResponse
-context (	
-current_domain (	
-
-alias_name (	
-alias_root_path (	D
-tagspace_aliases (2*.sc.game.editor.vqlengine.v1.TagspaceAlias
-expected_keywords (	5
-errors (2%.sc.game.editor.vqlengine.v1.VQLError"1
-TagspaceAlias
-alias (	
-	root_path (	"9
-VQLError
-line (
-column (
-message (	"1
-SearchTagsRequest
-query (	
-limit ("P
-SearchTagsResponse:
-results (2).sc.game.editor.vqlengine.v1.TagPathEntry"
-DescribeDomainsRequest"Y
-DomainDescription
-name (	
-description (	
-fields (	
-	row_count ("Z
-DescribeDomainsResponse?
-domains (2..sc.game.editor.vqlengine.v1.DomainDescription"#
-GetManualRequest
-section (	"6
-GetManualResponse
-content (	
-sections (	2à	
-VqlEngineServiced
-Query,.sc.game.editor.vqlengine.v1.VQLQueryRequest-.sc.game.editor.vqlengine.v1.VQLQueryResponsem
-
-GetTagName..sc.game.editor.vqlengine.v1.GetTagNameRequest/.sc.game.editor.vqlengine.v1.GetTagNameResponseg
-	GetStatus-.sc.game.editor.vqlengine.v1.GetStatusRequest+.sc.game.editor.vqlengine.v1.StatusResponsev
-FindLocations1.sc.game.editor.vqlengine.v1.FindLocationsRequest2.sc.game.editor.vqlengine.v1.FindLocationsResponsej
-	GetRecord-.sc.game.editor.vqlengine.v1.GetRecordRequest..sc.game.editor.vqlengine.v1.GetRecordResponseg
-Validate,.sc.game.editor.vqlengine.v1.ValidateRequest-.sc.game.editor.vqlengine.v1.ValidateResponsev
-BrowseTagPath1.sc.game.editor.vqlengine.v1.BrowseTagPathRequest2.sc.game.editor.vqlengine.v1.BrowseTagPathResponsep
-CompleteVQL/.sc.game.editor.vqlengine.v1.CompleteVQLRequest0.sc.game.editor.vqlengine.v1.CompleteVQLResponsem
-
-SearchTags..sc.game.editor.vqlengine.v1.SearchTagsRequest/.sc.game.editor.vqlengine.v1.SearchTagsResponse|
-DescribeDomains3.sc.game.editor.vqlengine.v1.DescribeDomainsRequest4.sc.game.editor.vqlengine.v1.DescribeDomainsResponsej
-	GetManual-.sc.game.editor.vqlengine.v1.GetManualRequest..sc.game.editor.vqlengine.v1.GetManualResponsebproto3
