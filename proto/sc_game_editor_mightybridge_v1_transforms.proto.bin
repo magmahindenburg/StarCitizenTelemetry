@@ -1,0 +1,37 @@
+
+/sc/game/editor/mightybridge/v1/transforms.protosc.game.editor.mightybridge.v1"
+Vec2f	
+x (	
+y ("(
+Vec3f	
+x (	
+y (	
+z ("3
+Vec4f	
+x (	
+y (	
+z (	
+w ("(
+Vec3i	
+x (	
+y (	
+z ("3
+Quatf	
+x (	
+y (	
+z (	
+w ("ç
+
+Transformf7
+position (2%.sc.game.editor.mightybridge.v1.Vec3f7
+rotation (2%.sc.game.editor.mightybridge.v1.Quatf
+scale ("(
+Vec3w	
+x (	
+y (	
+z ("ç
+
+Transformw7
+position (2%.sc.game.editor.mightybridge.v1.Vec3w7
+rotation (2%.sc.game.editor.mightybridge.v1.Quatf
+scale (bproto3

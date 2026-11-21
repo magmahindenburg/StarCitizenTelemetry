@@ -1,0 +1,194 @@
+// Reconstructed from embedded FileDescriptorProto in StarCitizen.exe (5.0.202.205 PTU)
+// source: sc/game/editor/vqlengine/v1/vqlengine.proto
+syntax = "proto3";
+package sc.game.editor.vqlengine.v1;
+
+message VQLQueryRequest {
+  string vql = 1;
+  uint32 limit = 2;
+  uint32 offset = 3;
+}
+
+message VQLQueryResponse {
+  repeated sc.game.editor.vqlengine.v1.VQLRow rows = 1;
+  string domain = 2;
+  uint32 total_count = 3;
+  string translated_sql = 4;
+}
+
+message VQLRow {
+  message FieldsEntry {
+    string key = 1;
+    string value = 2;
+  }
+  repeated sc.game.editor.vqlengine.v1.VQLRow.FieldsEntry fields = 1;
+}
+
+message GetTagNameRequest {
+  string tag_guid = 1;
+}
+
+message GetTagNameResponse {
+  string tag_name = 1;
+  string parent_guid = 2;
+  string full_path = 3;
+}
+
+message GetStatusRequest {
+}
+
+message StatusResponse {
+  bool ready = 1;
+  uint64 tag_count = 2;
+  string last_updated = 3;
+  repeated string domains = 4;
+  string db_path = 5;
+}
+
+message FindLocationsRequest {
+  repeated sc.game.editor.vqlengine.v1.TagSearchTerm terms = 1;
+  uint32 limit = 2;
+  uint32 offset = 3;
+}
+
+message TagSearchTerm {
+  repeated string positive_tag_guids = 1;
+  repeated string negative_tag_guids = 2;
+}
+
+message FindLocationsResponse {
+  repeated sc.game.editor.vqlengine.v1.LocationResult locations = 1;
+  uint32 total_count = 2;
+}
+
+message LocationResult {
+  string location_def_guid = 1;
+  string oc_asset_key = 2;
+  string display_name = 3;
+  repeated string matched_tag_guids = 4;
+}
+
+message GetRecordRequest {
+  string guid = 1;
+}
+
+message GetRecordResponse {
+  string guid = 1;
+  string record_type = 2;
+  string file_path = 3;
+  repeated sc.game.editor.vqlengine.v1.ResolvedField fields = 4;
+}
+
+message ResolvedField {
+  string field_path = 1;
+  string value = 2;
+  string value_type = 3;
+  bool inherited = 4;
+}
+
+message ValidateRequest {
+  string domain = 1;
+  string rule = 2;
+}
+
+message ValidateResponse {
+  repeated sc.game.editor.vqlengine.v1.ValidationViolation violations = 1;
+  uint32 total_count = 2;
+}
+
+message ValidationViolation {
+  string source_file = 1;
+  string element_id = 2;
+  string rule = 3;
+  string severity = 4;
+  string description = 5;
+}
+
+message BrowseTagPathRequest {
+  string path_prefix = 1;
+}
+
+message BrowseTagPathResponse {
+  string resolved_guid = 1;
+  string resolved_path = 2;
+  repeated sc.game.editor.vqlengine.v1.TagPathEntry children = 3;
+}
+
+message TagPathEntry {
+  string name = 1;
+  string full_path = 2;
+  string guid = 3;
+  int32 child_count = 4;
+}
+
+message CompleteVQLRequest {
+  string vql = 1;
+  uint32 cursor_offset = 2;
+}
+
+message CompleteVQLResponse {
+  string context = 1;
+  string current_domain = 2;
+  string alias_name = 3;
+  string alias_root_path = 4;
+  repeated sc.game.editor.vqlengine.v1.TagspaceAlias tagspace_aliases = 5;
+  repeated string expected_keywords = 6;
+  repeated sc.game.editor.vqlengine.v1.VQLError errors = 7;
+}
+
+message TagspaceAlias {
+  string alias = 1;
+  string root_path = 2;
+}
+
+message VQLError {
+  uint32 line = 1;
+  uint32 column = 2;
+  string message = 3;
+}
+
+message SearchTagsRequest {
+  string query = 1;
+  uint32 limit = 2;
+}
+
+message SearchTagsResponse {
+  repeated sc.game.editor.vqlengine.v1.TagPathEntry results = 1;
+}
+
+message DescribeDomainsRequest {
+}
+
+message DomainDescription {
+  string name = 1;
+  string description = 2;
+  repeated string fields = 3;
+  uint32 row_count = 4;
+}
+
+message DescribeDomainsResponse {
+  repeated sc.game.editor.vqlengine.v1.DomainDescription domains = 1;
+}
+
+message GetManualRequest {
+  string section = 1;
+}
+
+message GetManualResponse {
+  string content = 1;
+  repeated string sections = 2;
+}
+
+service VqlEngineService {
+  rpc Query (sc.game.editor.vqlengine.v1.VQLQueryRequest) returns (sc.game.editor.vqlengine.v1.VQLQueryResponse);
+  rpc GetTagName (sc.game.editor.vqlengine.v1.GetTagNameRequest) returns (sc.game.editor.vqlengine.v1.GetTagNameResponse);
+  rpc GetStatus (sc.game.editor.vqlengine.v1.GetStatusRequest) returns (sc.game.editor.vqlengine.v1.StatusResponse);
+  rpc FindLocations (sc.game.editor.vqlengine.v1.FindLocationsRequest) returns (sc.game.editor.vqlengine.v1.FindLocationsResponse);
+  rpc GetRecord (sc.game.editor.vqlengine.v1.GetRecordRequest) returns (sc.game.editor.vqlengine.v1.GetRecordResponse);
+  rpc Validate (sc.game.editor.vqlengine.v1.ValidateRequest) returns (sc.game.editor.vqlengine.v1.ValidateResponse);
+  rpc BrowseTagPath (sc.game.editor.vqlengine.v1.BrowseTagPathRequest) returns (sc.game.editor.vqlengine.v1.BrowseTagPathResponse);
+  rpc CompleteVQL (sc.game.editor.vqlengine.v1.CompleteVQLRequest) returns (sc.game.editor.vqlengine.v1.CompleteVQLResponse);
+  rpc SearchTags (sc.game.editor.vqlengine.v1.SearchTagsRequest) returns (sc.game.editor.vqlengine.v1.SearchTagsResponse);
+  rpc DescribeDomains (sc.game.editor.vqlengine.v1.DescribeDomainsRequest) returns (sc.game.editor.vqlengine.v1.DescribeDomainsResponse);
+  rpc GetManual (sc.game.editor.vqlengine.v1.GetManualRequest) returns (sc.game.editor.vqlengine.v1.GetManualResponse);
+}

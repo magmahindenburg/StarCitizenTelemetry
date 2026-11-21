@@ -1,0 +1,17 @@
+
+#sc/game/shard_sup/v1/messages.protosc.game.shard_sup.v1google/protobuf/any.proto"N
+Hello
+
+service_id (	
+network_node_id (	
+application_name (	"—
+ConnectInfo
+network_node_id (	
+
+session_id (	
+address (	,
+construct_data (2.google.protobuf.Any
+replicant_service_id (	"!
+ForeignStow
+
+entity_ids (bproto3

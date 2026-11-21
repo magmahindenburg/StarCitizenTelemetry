@@ -1,0 +1,5 @@
+// Reconstructed from embedded FileDescriptorProto in StarCitizen.exe (5.0.202.205 PTU)
+// source: sc/game/transport/messages.proto
+syntax = "proto3";
+package sc.game.transport;
+
